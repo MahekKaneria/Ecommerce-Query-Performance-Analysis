@@ -28,7 +28,7 @@ AND order_id IN (SELECT order_id FROM Order_items GROUP BY order_id HAVING COUNT
 results = {"Uninformed": [0 for i in range(3)], "Self": [0 for i in range(3)], "User": [0 for i in range(3)]}
 
 # Connect to all 3 database and execute Query 2 50 times for each scenario
-for num, database_name in enumerate(['A3small.db', 'A3medium.db', 'A3large.db']):
+for num, database_name in enumerate(['small.db', 'medium.db', 'large.db']):
     database_path = os.path.join(base_directory, database_name)  # Updated path
     for scenario in results:
         connection = sqlite3.connect(database_path)
